@@ -1,4 +1,5 @@
 #include "DHT.h"
+#include "ArduinoJson.h"
 
 #define DHTPIN 4
 #define DHTTYPE DHT22
@@ -26,6 +27,15 @@ void loop() {
     Serial.println("Falha ao ler o sensor DHT22!");
     return;
   }
+
+  // Cria um Json com os dados do sensor, formato que será utilizado no envio para a API
+  JsonDocument doc;
+  doc["sensor"] = "DHT22";
+  doc["temperatura"] = temperatura;
+  doc["umidade"] = umidade;
+  Serial.print("Json criado: ");
+  serializeJson(doc, Serial);
+  Serial.println();
 
   Serial.print("Temperatura: ");
   Serial.println(temperatura + String("°C"));
