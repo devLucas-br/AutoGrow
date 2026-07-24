@@ -1,4 +1,5 @@
 config.h
+configIP.h
 
 # .NET build outputs
 bin/
