@@ -1,0 +1,8 @@
+#ifndef CONFIG_H
+#define CONFIG_H
+
+#define WIFI_SSID "seu-ssid-aqui"
+#define WIFI_PASSWORD "sua-senha-aqui"
+#define SERVER_URL "url-da-api-aqui"
+
+#endif

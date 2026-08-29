@@ -1,6 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 using AutoGrow.Api.Data;
 
+Environment.SetEnvironmentVariable("DOTNET_hostBuilder:reloadConfigOnChange", "false");
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
